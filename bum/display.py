@@ -9,7 +9,7 @@ def init(size=250):
     player = mpv.MPV(start_event_thread=False)
     player["force-window"] = "immediate"
     player["keep-open"] = "yes"
-    player["geometry"] = f"{size}x{size}"
+    player["geometry"] = f"{size}x{size}+200-64"
     player["autofit"] = f"{size}x{size}"
     player["title"] = "bum"
 
