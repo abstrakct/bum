@@ -54,6 +54,7 @@ def get_art(cache_dir, size, client):
         Look for a file with the same name as the artist in cache_dir/fallback
         Read file, write it to current.jpg
         TODO: Make it more flexible. Right now file name has to be exactly {artist name}.jpg (slashes removed)
+        TODO: Check if file exists before reading it!
         """
         if not album_art:
             file_name = f"{song['artist']}.jpg".replace("/", "")
