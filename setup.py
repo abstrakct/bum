@@ -16,7 +16,7 @@ except(IOError, ImportError, RuntimeError):
 
 
 VERSION = bum.__version__
-DOWNLOAD = "https://github.com/dylanaraps/bum/archive/%s.tar.gz" % VERSION
+DOWNLOAD = "https://github.com/abstrakct/bum/archive/%s.tar.gz" % VERSION
 
 
 setuptools.setup(

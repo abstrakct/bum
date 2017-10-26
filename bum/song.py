@@ -48,3 +48,18 @@ def get_art(cache_dir, size, client):
             util.bytes_to_file(album_art, cache_dir / "current.jpg")
 
             print(f"album: Swapped art to {song['artist']}, {song['album']}.")
+
+        """
+        If no album art found:
+        Look for a file with the same name as the artist in cache_dir/fallback
+        Read file, write it to current.jpg
+        TODO: Make it more flexible. Right now file name has to be exactly {artist name}.jpg (slashes removed)
+        """
+        if not album_art:
+            file_name = f"{song['artist']}.jpg".replace("/", "")
+            file_name = cache_dir / 'fallback' / file_name
+            album_art = util.file_to_bytes(file_name)
+            util.bytes_to_file(album_art, cache_dir / "current.jpg")
+
+            print(f"album: Swapped art to fallback image for {song['artist']}.")
+
